@@ -23,13 +23,13 @@ export async function POST(request: Request){
         ({email, isVerified:true});
         //email already registered
         if(existingUserVerifiedByEmail){
-        if(existingUserVerifiedByEmail.isVerified){
+         if(existingUserVerifiedByEmail.isVerified){
             return NextResponse.json({
                 success:false,
                 message:"Email is already registered."
             },{status:400});
         }
-        else{
+         else{
             //user exists but not verified ,resend verification email
             const hashedPassword= await bcrypt.hash(password,10);
             existingUserVerifiedByEmail.password=hashedPassword;
@@ -38,7 +38,7 @@ export async function POST(request: Request){
             expiryDate.setHours(expiryDate.getHours()+1);
             await existingUserVerifiedByEmail.save();
         }
-        }else{
+        } else{
             const hashedPassword= await bcrypt.hash(password,10);
             const expiryDate=new Date();
             expiryDate.setHours(expiryDate.getHours()+1);//1 hour expiry
