@@ -114,7 +114,7 @@ const page = () => {
 
       {/* Profile URL */}
       <div className="mb-6">
-        <h2 className="text-sm font-semibold mb-2">Profile URL</h2>
+        <h2 className="font-bold mb-2">Profile URL</h2>
         <div className="flex gap-2">
           <input
             value={profileUrl}
@@ -123,8 +123,11 @@ const page = () => {
           />
           <Button onClick={copyToClipboard}>Copy</Button>
         </div>
+         <p className="text-m mt-2 ">
+          Share this URL to receive anonymous messages from your friends and followers.
+        </p>
       </div>
-
+      
       <div className="mb-6 flex items-center gap-3">
         <Switch
           checked={acceptMessages}
