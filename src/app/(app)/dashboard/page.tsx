@@ -123,7 +123,7 @@ const page = () => {
           />
           <Button onClick={copyToClipboard}>Copy</Button>
         </div>
-         <p className="text-m mt-2 ">
+         <p className="text-m mt-2 font-medium">
           Share this URL to receive anonymous messages from your friends and followers.
         </p>
       </div>

@@ -35,7 +35,7 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <Footer/>
-        <Toaster richColors position="top-right" />
+        <Toaster position="bottom-right" toastOptions={{className: "bg-zinc-900 text-white border border-zinc-800",}}/>
       </body>
       </AuthProviders>
     </html>

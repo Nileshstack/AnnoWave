@@ -47,7 +47,7 @@ const page = () => {
 
     toast.success(response.data.message);// success
     form.reset({ content: "" });
-   //AftDebug 403 forbidden is not error it is a response and gets catch block directly 
+   //AftDebug: 403 forbidden is not error it is a response and gets catch block directly 
   } catch (error) {
     const err = error as AxiosError<ApiReasponse>;
     toast.error(err.response?.data.message || "Something went wrong");

@@ -1,8 +1,10 @@
 import mongoose,{Schema, Document} from "mongoose";
+import { boolean } from "zod";
 
 export interface Message extends Document{
  content:string;
  createdAt:Date;
+  like:boolean;
 }
 const MessageSchema:Schema<Message> = new Schema({
   content:{
@@ -13,6 +15,10 @@ const MessageSchema:Schema<Message> = new Schema({
     type:Date,
     required:true,
     default:Date.now
+  },
+  like:{
+    type:Boolean,
+    default:false
   }
 })
 

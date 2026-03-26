@@ -19,20 +19,27 @@ const Navbar = () => {
         >
           AnonWave
         </Link>
-
+         
         <div className="flex items-center gap-9">
+          
           {session ? (
             <>
 
-              <div className="hidden md:flex items-center gap-3">
+              <div className="hidden md:flex ">
+                <Link href="/dashboard" className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold uppercase">
                   {(user?.username || user?.email)?.charAt(0)}
                 </div>
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
                   {user?.username || user?.email}
                 </span>
+                </Link>
               </div>
-
+              <Link href="/discover">
+              <Button className="rounded-full px-6 transition-all hover:scale-105">
+              Discover
+              </Button>
+            </Link>
               <Button
                 onClick={() => signOut()}
                 className="rounded-full px-6 transition-all hover:scale-105"

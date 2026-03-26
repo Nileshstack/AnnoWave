@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,17 @@ import messages from "@/messages.json";
 import Link from "next/link";
 
 const Page = () => {
+  useEffect(() => {
+  console.log(
+    "%c WHO IS THIS SNEAKY DEVELOPER?",
+    " font-weight: 700; font-size: 12px;"
+  );
+
+  console.log(
+    "%c CHECK OUT MY GITHUB: https://github.com/Nileshstack",
+    " font-weight: bold; font-size:10px;"
+  );
+}, []);
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <section className="max-w-7xl mx-auto px-6 py-24 text-center">

@@ -3,8 +3,24 @@ import { authOptions } from "../auth/[...nextauth]/option";
 import dbConnect from "@/lib/dbConnect";
 import {User} from "next-auth"
 import UserModel from "@/model/User";
+import { checkRateLimit } from "@/lib/rateLimit";
 
 export async function POST(request: Request) {
+    const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0] ||
+    "anonymous";
+
+  // Apply rate limit
+  const allowed = checkRateLimit(ip);
+
+  if (!allowed) {
+    return new Response(
+      JSON.stringify({
+        message: "Too many requests. Please try again later.",
+      }),
+      { status: 429 }
+    );
+  }
   await dbConnect();
     const session = await getServerSession(authOptions);
     const user= session?.user as User;

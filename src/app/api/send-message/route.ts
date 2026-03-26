@@ -1,7 +1,23 @@
 import dbConnect from "@/lib/dbConnect";
+import { checkRateLimit } from "@/lib/rateLimit";
 import UserModel, { Message } from "@/model/User";
 
 export async function POST(request: Request) {
+      const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0] ||
+    "anonymous";//?.split(",")[0] coz sometime multiple ip are there in header, we take first one as client ip
+
+  // Apply rate limit
+  const allowed = checkRateLimit(ip);
+
+  if (!allowed) {
+    return new Response(
+      JSON.stringify({
+        message: "Too many requests. Please try again later.",
+      }),
+      { status: 429 }
+    );
+  }
     await dbConnect();
     //we can veryfy sendrer identity here if needed
     const {username,content}= await request.json();
