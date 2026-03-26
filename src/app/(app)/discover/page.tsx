@@ -18,7 +18,8 @@ type User = {
 export default function PublicProfilesPage() {
   const [users, setUsers] = useState<User[]>([])
   const [search, setSearch] = useState("")
-
+  const [loading, setLoading] = useState(true);
+ 
   const router = useRouter();
   const session= useSession();
   
@@ -28,6 +29,7 @@ export default function PublicProfilesPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
+        setLoading(true);
         const res = await fetch("/api/get-username")
         const data = await res.json()
         
@@ -36,9 +38,11 @@ export default function PublicProfilesPage() {
             username,
           }))
           setUsers(Users)
+          setLoading(false);
           toast.success("Send Ananymous messages to public profiles");
         }
       } catch (err) {
+        setLoading(false);
         toast.error("Failed to fetch users");
       }
     }
@@ -88,7 +92,13 @@ export default function PublicProfilesPage() {
         </div>
 
         <div className="space-y-4">
-          {filteredUsers.length > 0 ? (
+          {loading ? (
+           <div className="text-center py-16 space-y-2">
+              <p className="text-gray-400 text-sm font-mono">— Loading Public Profiles —</p>
+              <p className="text-gray-300 text-xs">Wait for a while...</p>
+            </div>
+          ) :(
+          filteredUsers.length > 0 ? (
             filteredUsers.map((user, index) => (
               <Card key={index}>
                 <CardContent className="flex items-center justify-between p-4">
@@ -122,7 +132,8 @@ export default function PublicProfilesPage() {
               <p className="text-gray-400 text-sm font-mono">— no profiles found —</p>
               <p className="text-gray-300 text-xs">Try a different search term</p>
             </div>
-          )}
+          ))}
+          
         </div>
       </div>
     </div>
