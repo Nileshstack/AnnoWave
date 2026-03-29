@@ -35,6 +35,11 @@ const Navbar = () => {
                 </span>
                 </Link>
               </div>
+              <Link href="/team">
+              <Button className="rounded-full px-6 transition-all hover:scale-105">
+              Squadron
+              </Button>
+            </Link>
               <Link href="/discover">
               <Button className="rounded-full px-6 transition-all hover:scale-105">
               Discover

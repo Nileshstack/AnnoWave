@@ -94,8 +94,8 @@ export default function PublicProfilesPage() {
         <div className="space-y-4">
           {loading ? (
            <div className="text-center py-16 space-y-2">
-              <p className="text-gray-400 text-sm font-mono">— Loading Public Profiles —</p>
-              <p className="text-gray-300 text-xs">Wait for a while...</p>
+              <p className="text-gray-600 text-md font-mono">— Loading Public Profiles —</p>
+              <p className="text-gray-500 text-sm">Wait for a while...</p>
             </div>
           ) :(
           filteredUsers.length > 0 ? (
