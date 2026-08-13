@@ -30,7 +30,7 @@ const Page = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const debounced = useDebounceCallback(setUsername, 300);
+  const debounced = useDebounceCallback(setUsername, 3000);
   const router = useRouter();
   const { status } = useSession();
 

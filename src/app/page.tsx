@@ -14,6 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 import messages from "@/messages.json";
 import Link from "next/link";
 
+
 const Page = () => {
   useEffect(() => {
   console.log(
