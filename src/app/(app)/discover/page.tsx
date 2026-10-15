@@ -60,7 +60,7 @@ export default function PublicProfilesPage() {
   )
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-dvh lg:min-h-screen bg-white px-4 py-10">
        <div className="max-w-2xl mx-auto space-y-8">
 
         <div className="space-y-3">
@@ -101,22 +101,23 @@ export default function PublicProfilesPage() {
           filteredUsers.length > 0 ? (
             filteredUsers.map((user, index) => (
               <Card key={index}>
-                <CardContent className="flex items-center justify-between p-4">
+                <CardContent className="flex flex-col items-stretch gap-4 p-4 md:flex-row md:items-center md:justify-between">
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-semibold">
+                  <div className="flex min-w-0 items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black font-semibold text-white">
                       {user.username.slice(0, 2).toUpperCase()}
                     </div>
 
-                    <div>
+                    <div className="min-w-0">
                       <p className="font-semibold">@{user.username}</p>
-                      <p className="text-sm text-gray-600">
+                      <p className="break-all text-sm text-gray-600">
                         {`${baseUrl}/Anonwave/${user.username}`}
                       </p>
                     </div>
                   </div>
 
                   <Button
+                    className="min-h-11 w-full md:w-auto lg:min-h-0"
                     onClick={() =>
                       window.open(`${baseUrl}/Anonwave/${user.username}`, "_blank")
                     }

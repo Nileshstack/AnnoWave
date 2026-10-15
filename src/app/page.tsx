@@ -28,9 +28,9 @@ const Page = () => {
   );
 }, []);
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+    <main className="min-h-dvh lg:min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
           Welcome to the{" "}
           <span className="text-indigo-600">AnonWave World</span>
         </h1>
@@ -46,8 +46,8 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-24">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 md:pb-24">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-10">
           What People Are Saying
         </h2>
 
@@ -79,8 +79,8 @@ const Page = () => {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-1 lg:-left-12" />
+          <CarouselNext className="right-1 lg:-right-12" />
         </Carousel>
       </section>
       

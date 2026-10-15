@@ -67,10 +67,10 @@ const handelSubmit=async()=>{
   }
 };
    return (
-  <div className="my-10 mx-4 md:mx-8 lg:mx-auto w-full max-w-3xl">
+  <div className="mx-auto my-8 w-[calc(100%-2rem)] max-w-3xl md:my-10 lg:w-full">
     <Card className="shadow-sm">
       <CardHeader>
-        <CardTitle className="text-3xl font-bold">
+        <CardTitle className="text-2xl sm:text-3xl font-bold">
           Join Room
         </CardTitle>
 
@@ -91,6 +91,7 @@ const handelSubmit=async()=>{
           <Input
             id="roomCode"
             type="text"
+            className="min-h-11 lg:min-h-0"
             value={roomCode}
             onChange={(e) => setRoomCode(e.target.value)}
             placeholder="Enter room code"
@@ -105,7 +106,7 @@ const handelSubmit=async()=>{
 
         {/* Button */}
         <Button
-          className="w-full"
+          className="min-h-11 w-full lg:min-h-0"
           disabled={loading || !roomCode.trim()}
           onClick={handelSubmit}
         >

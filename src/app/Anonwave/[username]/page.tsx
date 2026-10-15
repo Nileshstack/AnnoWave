@@ -72,7 +72,7 @@ const page = () => {
       setGenerateLoading(false);
     };
  return (
-  <div className="max-w-3xl mx-auto mt-12 px-4">
+  <div className="mx-auto mt-8 max-w-3xl px-4 lg:mt-12">
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="text-2xl">
@@ -110,7 +110,7 @@ const page = () => {
             />
 
             <div className="flex justify-end">
-              <Button type="submit" disabled={loading}>
+              <Button type="submit" className="min-h-11 w-full sm:w-auto lg:min-h-0" disabled={loading}>
                 {loading ? "Sending..." : "Send Message"}
               </Button>
             </div>
@@ -121,13 +121,14 @@ const page = () => {
 
         {/* open ai suggest's */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h3 className="text-lg font-semibold">
               Need inspiration?
             </h3>
 
             <Button
               variant="outline"
+              className="min-h-11 w-full sm:w-auto lg:min-h-0"
               onClick={generateSuggestions}
               disabled={generateLoading}
             >
@@ -156,9 +157,9 @@ const page = () => {
                     form.setValue("content", q)
                   }
                 >
-                  <CardContent className="p-4 flex items-start gap-3">
+                  <CardContent className="flex items-start gap-3 p-4">
                     <Badge variant="secondary">AI</Badge>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="min-w-0 break-words text-sm text-muted-foreground">
                       {q}
                     </p>
                   </CardContent>

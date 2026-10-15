@@ -93,37 +93,37 @@ const RoomChat = ({roomCode}:RoomChatProps) => {
   const isOwnMessage = (senderId: string) => senderId === userId;
 if (fetching) {
   return (
-    <div className="flex h-[70vh] items-center justify-center">
+    <div className="flex h-[70vh] min-h-dvh items-center justify-center lg:h-[70vh]">
       <Loader2 className="h-8 w-8 animate-spin" />
     </div>
   );
 }
 
 return (
-  <Card className="fixed inset-0 flex flex-col overflow-hidden rounded-none border-0 mt-10">
+  <Card className="fixed inset-x-0 top-0 bottom-0 mt-0 flex h-dvh flex-col overflow-hidden rounded-none border-0 lg:inset-0 lg:mt-10 lg:h-auto">
 
     {/* Header */}
-    <div className="flex items-center justify-between border-b px-6 py-4 bg-white">
-      <div className="flex items-center gap-3">
+    <div className="flex items-center justify-between border-b bg-white px-4 py-3 sm:px-6 sm:py-4">
+      <div className="flex min-w-0 items-center gap-3">
 
-        <div>
+        <div className="min-w-0">
           <h2 className="text-xl font-bold">
             Anonymous Room
           </h2>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="break-all text-sm text-muted-foreground">
             Room Code: {roomCode}
           </p>
         </div>
       </div>
 
-      <Badge variant="secondary" className="gap-1">
+      <Badge variant="secondary" className="ml-2 shrink-0 gap-1">
         <Users className="h-3 w-3" />
         Anonymous Chat
       </Badge>
     </div>
 
-    <div className="flex-1 overflow-y-auto bg-muted/30 p-6">
+    <div className="flex-1 overflow-y-auto bg-muted/30 p-4 sm:p-6">
 
       {messages.length === 0 ? (
         <div className="flex h-full items-center justify-center">
@@ -150,7 +150,7 @@ return (
                 }`}
               >
                 <div
-                  className={`flex max-w-[75%] gap-3 ${
+                  className={`flex max-w-[90%] gap-3 sm:max-w-[75%] ${
                     own ? "flex-row-reverse" : ""
                   }`}
                 >
@@ -188,8 +188,8 @@ return (
 
     <Separator />
 
-    <div className="bg-white p-5">
-      <div className="flex gap-3">
+    <div className="bg-white p-4 sm:p-5">
+      <div className="flex flex-col gap-3 sm:flex-row">
 
         <Textarea
           value={input}
@@ -198,13 +198,13 @@ return (
           placeholder="Write an anonymous message..."
           disabled={sending}
           rows={2}
-          className="resize-none"
+          className="min-w-0 resize-none"
         />
 
         <Button
           onClick={handleSend}
           disabled={sending || !input.trim()}
-          className="h-auto px-6"
+          className="h-11 w-full px-6 sm:h-auto sm:w-auto"
         >
           {sending ? (
             <Loader2 className="h-4 w-4 animate-spin" />

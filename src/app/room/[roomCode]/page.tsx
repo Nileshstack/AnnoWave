@@ -43,7 +43,7 @@ console.log(roomCode);*/
 
   if (status === "loading" || access === "checking") {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/20">
+    <div className="flex min-h-dvh lg:min-h-screen items-center justify-center bg-muted/20 px-4 lg:px-0">
       <Card className="w-full max-w-sm p-8 text-center shadow-md">
         <Loader2 className="mx-auto h-8 w-8 animate-spin" />
 

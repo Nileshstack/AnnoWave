@@ -46,11 +46,11 @@ const VerifyAccount = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-950 dark:to-zinc-900 px-4">
-      <div className="w-full max-w-md rounded-xl border bg-white dark:bg-zinc-950 p-8 shadow-lg">
+    <div className="flex min-h-dvh lg:min-h-screen items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-950 dark:to-zinc-900 px-4 py-6 lg:py-0">
+      <div className="w-full max-w-md rounded-xl border bg-white dark:bg-zinc-950 p-5 sm:p-8 shadow-lg">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
             Verify your <span className="text-indigo-600">account</span>
           </h1>
           <p className="text-sm text-muted-foreground mt-2">

@@ -92,10 +92,10 @@ export default function CreateRoom() {
   };
 
   return (
-  <div className="my-11 mx-3 md:mx-8 lg:mx-auto w-full max-w-6xl rounded-xl border bg-white dark:bg-zinc-950 p-6 md:p-8 shadow-sm">
+  <div className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-6xl rounded-xl border bg-white dark:bg-zinc-950 p-4 sm:p-6 md:my-11 md:w-[calc(100%-4rem)] md:p-8 lg:w-full shadow-sm">
     <Card className="shadow-sm ">
       <CardHeader>
-        <CardTitle className="text-3xl font-bold">
+        <CardTitle className="text-2xl sm:text-3xl font-bold">
           Create Room
         </CardTitle>
 
@@ -114,6 +114,7 @@ export default function CreateRoom() {
 
           <Input
             id="roomName"
+            className="min-h-11 lg:min-h-0"
             placeholder="Enter your room name..."
             value={roomName}
             onChange={(e) => setRoomName(e.target.value)}
@@ -182,12 +183,13 @@ export default function CreateRoom() {
                 <Input
                   value={Status.roomCode}
                   readOnly
-                  className="font-mono text-lg font-semibold tracking-[0.3em]"
+                  className="min-h-11 min-w-0 flex-1 font-mono text-lg font-semibold tracking-[0.3em] lg:min-h-0"
                 />
 
                 <Button
                   variant="outline"
                   size="icon"
+                  className="h-11 w-11 lg:h-9 lg:w-9"
                   onClick={() => {
                     navigator.clipboard.writeText(Status.roomCode!);
                   }}

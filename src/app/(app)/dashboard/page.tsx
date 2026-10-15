@@ -103,7 +103,7 @@ const page = () => {
   };
 
   return (
-    <div className="my-10 mx-4 md:mx-8 lg:mx-auto w-full max-w-6xl rounded-xl border bg-white dark:bg-zinc-950 p-6 md:p-8 shadow-sm">
+    <div className="mx-auto my-10 w-[calc(100%-2rem)] max-w-6xl rounded-xl border bg-white dark:bg-zinc-950 p-4 sm:p-6 md:w-[calc(100%-4rem)] md:p-8 lg:w-full shadow-sm">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
@@ -115,13 +115,13 @@ const page = () => {
       {/* Profile URL */}
       <div className="mb-6">
         <h2 className="font-bold mb-2">Profile URL</h2>
-        <div className="flex gap-2">
+        <div className="flex min-w-0 gap-2">
           <input
             value={profileUrl}
             disabled
-            className="w-full rounded-md border bg-muted px-3 py-2 text-sm"
+            className="w-full min-w-0 flex-1 rounded-md border bg-muted px-3 py-2 text-sm"
           />
-          <Button onClick={copyToClipboard}>Copy</Button>
+          <Button className="min-h-11 lg:min-h-0" onClick={copyToClipboard}>Copy</Button>
         </div>
          <p className="text-m mt-2 font-medium">
           Share this URL to receive anonymous messages from your friends and followers.
