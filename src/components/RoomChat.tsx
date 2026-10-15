@@ -100,11 +100,11 @@ if (fetching) {
 }
 
 return (
-  <Card className="fixed inset-x-0 top-0 bottom-0 mt-0 flex h-dvh flex-col overflow-hidden rounded-none border-0 lg:inset-0 lg:mt-10 lg:h-auto">
+  <Card className="flex h-[calc(100dvh-77px)] flex-col rounded-none border-0 lg:h-[calc(100dvh-69px)]">
 
     {/* Header */}
-    <div className="flex items-center justify-between border-b bg-white px-4 py-3 sm:px-6 sm:py-4">
-      <div className="flex min-w-0 items-center gap-3">
+    <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b bg-white px-4 py-3 sm:px-6 sm:py-4 lg:flex-nowrap lg:gap-0">
+      <div className="flex min-w-0 flex-1 items-center gap-3">
 
         <div className="min-w-0">
           <h2 className="text-xl font-bold">
@@ -123,7 +123,7 @@ return (
       </Badge>
     </div>
 
-    <div className="flex-1 overflow-y-auto bg-muted/30 p-4 sm:p-6">
+    <div className="min-h-0 flex-1 overflow-y-auto bg-muted/30 p-4 sm:p-6">
 
       {messages.length === 0 ? (
         <div className="flex h-full items-center justify-center">
@@ -188,7 +188,7 @@ return (
 
     <Separator />
 
-    <div className="bg-white p-4 sm:p-5">
+    <div className="shrink-0 bg-white p-4 sm:p-5">
       <div className="flex flex-col gap-3 sm:flex-row">
 
         <Textarea
